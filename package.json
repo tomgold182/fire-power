@@ -1,6 +1,6 @@
 {
   "name": "fire-power",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple Cisco Fire-Power Client",
   "main": "index.js",
   "scripts": {
