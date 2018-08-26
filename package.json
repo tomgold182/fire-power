@@ -1,8 +1,8 @@
 {
   "name": "fire-power",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple Cisco Fire-Power Client",
-  "main": "index.js",
+  "main": "FirePower.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
@@ -26,8 +26,11 @@
   "homepage": "https://github.com/tomgold182/fire-power#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "rimraf": "^2.6.2"
   },
   "dependencies": {

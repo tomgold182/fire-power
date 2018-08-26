@@ -1,5 +1,7 @@
-import * as request from 'request';
-import { resolve } from 'url';
+
+//import * as request from 'request';
+//import { resolve } from 'url';
+var request=require('request')
 
 class FirePower {
     constructor(ip,username,password) {
@@ -11,7 +13,7 @@ class FirePower {
       this.commentPrefix='Automated'
     }
     
-    connect = () => {
+    connect () {
         return new Promise((resolve,reject)=> {
             console.log('Trying to connect');
             const options = {
@@ -28,6 +30,11 @@ class FirePower {
             console.dir(error);
             return reject(error);
           }
+          if (body['error']) {
+            console.log('in er2')
+          console.dir(body['error']['messages'])
+          return reject(error);
+        } 
            this.x_auth_token=response.headers['x-auth-access-token']
            this.x_refresh_token=response.headers['x-auth-refresh-token']
            console.log(this.x_auth_token + this.x_refresh_token)
@@ -35,7 +42,7 @@ class FirePower {
        })
         }
     )}
-    addHostObject = (optionParams) => {
+    addHostObject(optionParams) {
         return new Promise((resolve,reject) =>
         {
             console.log('Trying to add host object');
@@ -71,7 +78,7 @@ class FirePower {
         })
         })
     }
-    blockOutgoingConnectionForHost = (optionParams) => {
+    blockOutgoingConnectionForHost (optionParams) {
         
         return new Promise((resolve,reject) =>
         {
@@ -122,7 +129,7 @@ class FirePower {
         })
         })
     }
-    blockIncomingConnectionForHost = (optionParams) => {
+    blockIncomingConnectionForHost (optionParams) {
         console.log(optionParams)
         // TODO: Handle Code duplication
         return new Promise((resolve,reject) =>
@@ -175,5 +182,5 @@ class FirePower {
         })
     }
   }
-  export {FirePower}
+  module.exports = FirePower
   

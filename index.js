@@ -1,4 +1,5 @@
-import {FirePower} from './FirePower';
+//import {FirePower} from './FirePower';
+var FirePower = require('./FirePower');
 
 var addHostOptions= {
     domainUUID: 'e276abec-e0f2-11e3-8169-6d9ed49b625f',
