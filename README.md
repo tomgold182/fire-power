@@ -11,14 +11,14 @@ var firePowerClient = new FirePower('1.1.1.1','user','pass')
 
 usage:
 ```
-var addHostOptions= {
+var HostOptions= {
     domainUUID: 'e276efc-e0f2-11e3-8169-88872ef',
     objectName: 'test_4.4.4.4',
     host: '4.4.4.4'
 }
 var firePowerClient = new FirePower('1.1.1.1','user','pass')
     fire.connect()
-    .then(() => (fire.addHostObject(addHostOptions)))
+    .then(() => (fire.addHostObject(HostOptions)))
     .catch((ex)=>(console.log(ex)))
 
 ```
